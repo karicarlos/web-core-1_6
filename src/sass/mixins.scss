@@ -1,0 +1,43 @@
+// Заголовок с акцентной полосой слева
+@mixin title-accent($width: 4px, $height: 40px, $color: $color-accent) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: $width;
+    height: $height;
+    background-color: $color;
+  }
+}
+
+// Универсальный placeholder
+@mixin placeholder($color) {
+  &::placeholder {
+    color: $color;
+  }
+}
+
+// Скрыть scrollbar в WebKit
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;     /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;           /* Chrome, Safari, Opera */
+  }
+}
+
+// Адаптивная сетка (для цен)
+@mixin price-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

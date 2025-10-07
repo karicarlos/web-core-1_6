@@ -1,0 +1,147 @@
+.header__container {
+  background-color: $color-white;
+  display: flex;
+  height: 88px;
+  width: 100%;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    padding: 0 $container-padding-tablet;
+  }
+}
+
+.nav {
+  display: flex;
+  margin: 0 $container-padding-mobile;
+
+  @media (min-width: 768px) {
+    margin: 0 $container-padding-tablet;
+  }
+}
+
+.nav__logo {
+  width: 96px;
+  height: 50px;
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+  gap: 15px;
+}
+
+.nav__buttons {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    gap: 18px;
+  }
+}
+
+.chat-buttons {
+  display: none;
+  list-style: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    padding: 20px 0;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.service-buttons {
+  display: flex;
+  gap: 15px;
+  padding: 20px 0;
+  list-style: none;
+  align-items: center;
+
+  &::before {
+    content: "";
+    display: flex;
+    width: 2px;
+    height: 32px;
+    margin: 0 6px 0 0;
+    background-color: $color-border;
+  }
+
+  @media (min-width: 768px) {
+    &::before {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: 1120px) {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.desktop {
+  display: none;
+
+  @media (min-width: 1120px) {
+    display: flex;
+    margin-right: 20px;
+    padding: 0;
+    gap: 24px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.content {
+  background-color: $color-bg;
+
+  @media (min-width: 1120px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 28px;
+  }
+}
+
+.content__title {
+  display: flex;
+  color: $color-black;
+  width: 288px;
+  height: 40px;
+  font-family: $font-bold;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  margin: 32px 0 0 0;
+
+  @include title-accent;
+
+  @media (min-width: 768px) {
+    margin-top: 24px;
+    gap: 10px;
+    &::before {
+      width: 2px;
+    }
+  }
+
+  @media (min-width: 1120px) {
+    margin-top: 0;
+  }
+}
+
+.logo_img {
+  width: 100%;
+  padding-right: 24px;
+
+  @media (min-width: 768px) {
+    min-width: 360px;
+    min-height: 208px;
+  }
+}

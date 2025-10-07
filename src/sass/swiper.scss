@@ -1,0 +1,306 @@
+// Общие стили
+.title,
+.name,
+.nametwo {
+  width: 288px;
+  max-height: 80px;
+  margin: 10px;
+  padding: 10px;
+  color: $color-text-gray;
+  font-family: $font-regular;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nametwo {
+  margin: 20px;
+  padding-left: 20px;
+  max-height: 50px;
+  &::before {
+    display: none;
+  }
+}
+
+.swiper {
+  position: relative;
+  overflow: visible;
+  padding: 0 20px 20px;
+}
+
+// Бренды
+.brands {
+  &__list {
+    max-height: 145px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    @include hide-scrollbar;
+
+    @media (min-width: 768px) {
+      gap: 10px;
+      flex-wrap: wrap;
+      max-height: 150px;
+      overflow: hidden;
+
+      &.expand {
+        max-height: 1000px;
+      }
+    }
+
+    @media (min-width: 1120px) {
+      max-height: 150px;
+      &.expand {
+        max-height: 1000px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    height: 50px;
+    max-width: 202px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid $color-border;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: $color-white;
+
+    &:hover {
+      background-color: #f9d3da;
+      transition: $transition;
+    }
+
+    @media (min-width: 768px) {
+      width: calc(33.33% - 12px);
+    }
+
+    @media (min-width: 1120px) {
+      flex: 1 1 calc(25% - 12px);
+      max-width: 218px;
+    }
+  }
+}
+
+// Устройства
+.devices {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 100%;
+
+    &__list {
+      max-height: 290px;
+      overflow: visible;
+      flex-wrap: wrap;
+    }
+
+    &.over {
+      max-height: 1100px;
+    }
+
+    .devices__item {
+      max-width: 220px;
+      height: 160px;
+    }
+
+    .swipersec-pagination {
+      display: none;
+    }
+  }
+}
+
+.devices .swiper-slide {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  max-width: 200px;
+  height: 120px;
+  padding: 20px;
+  border: 1px solid $color-border;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: $color-white;
+  font-family: $font-medium;
+  color: $color-text-dark;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+// Цены
+.prices {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-bg;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    display: grid;
+    border: 1px solid #ddd;
+  }
+
+  @media (min-width: 1120px) {
+    width: 100%;
+  }
+}
+
+.prices-tit {
+  max-width: 126px;
+  max-height: 19px;
+  color: $color-text-gray;
+  font-family: $font-regular;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+  padding: 6px 0 0 12px;
+
+  // Скрываем на десктопе
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.prices__list {
+  height: 200px;
+  max-width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (min-width: 768px) {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0;
+    background: $color-white;
+    border: 1px solid #00AEEF;
+    border-radius: 6px;
+  }
+}
+
+.prices .swiper-slide {
+  max-width: 260px;
+  max-height: 200px;
+  flex-direction: column;
+  background-color: $color-white;
+  padding-top: 10px;
+  justify-content: center;
+}
+
+.prices__description {
+  margin: 2px;
+  padding: 0 0 6px 10px;
+  font-family: $font-regular;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    text-align: left;
+    min-width: 50px;
+    max-width: 340px;
+
+    &:nth-child(4),
+    &:nth-child(6) {
+      text-align: center;
+    }
+  }
+}
+
+// Десктопная таблица цен
+@media (min-width: 768px) {
+  .prices-header {
+    display: inline-flex;
+    width: 100%;
+    max-width: 1440px;
+    height: 16px;
+    justify-content: space-around;
+    color: $color-text-gray;
+    font-family: $font-regular;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  .prices .prices__item {
+    @include price-grid;
+
+    .prices__description:nth-child(2) { grid-column: 1; } // Услуга
+    .prices__description:nth-child(4) { grid-column: 2; } // Цена
+    .prices__description:nth-child(6) { grid-column: 3; } // Срок
+
+    .button_order {
+      grid-column: 4;
+      justify-self: end;
+      background-color: $color-primary;
+      border: none;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 6px;
+      font-weight: bold;
+      color: $color-white;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+  }
+}
+
+// Пагинация
+.swiper-pagination,
+.swipersec-pagination,
+.swiper-pagination-third {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12px;
+  margin-top: 0;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+// Кнопки "Показать всё"
+.links-all {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    margin-top: 0;
+  }
+}
+
+#toggleButtonBrands,
+#toggleButtonDevices {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    background: transparent;
+    color: $color-text-dark;
+    border: 0;
+    border-radius: 5px;
+
+    &::before {
+      content: url(/img/exp.svg);
+      width: 24px;
+      height: 24px;
+      margin-right: 4px;
+      color: $color-accent;
+    }
+  }
+}

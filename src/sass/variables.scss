@@ -1,0 +1,29 @@
+// Цвета
+$color-primary: #FF3E79;
+$color-accent: #41F6D7;
+$color-text-dark: #1B1C21;
+$color-text-gray: #7E7E82;
+$color-placeholder: #B5B6BC;
+$color-bg: #F8F8F8;
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-border: #EAEAEA;
+$color-overlay: rgba(0, 0, 0, 0.3);
+$color-error: #FF3E79;
+
+// Шрифты
+$font-regular: 'TT LakesR', sans-serif;
+$font-medium: 'TT LakesM', sans-serif;
+$font-bold: 'TT LakesB', sans-serif;
+
+// Размеры
+$sidebar-width: 320px;
+$sidebar-max-width: 360px;
+$container-padding-mobile: 16px;
+$container-padding-tablet: 24px;
+$border-radius: 12px;
+$transition: 0.3s ease;
+
+// Тени
+$shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.15);

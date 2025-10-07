@@ -1,0 +1,196 @@
+%modal-base {
+  position: fixed;
+  top: 0;
+  width: $sidebar-width;
+  max-width: $sidebar-max-width;
+  height: 100%;
+  background-color: $color-white;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+
+  &.open {
+    display: block;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  background: $color-overlay;
+  z-index: 999;
+  transition: $transition;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (min-width: 513px) {
+    z-index: 1;
+  }
+}
+
+.sidebar {
+  @extend %modal-base;
+  left: -100%;
+  transition: left $transition;
+
+  &.open {
+    left: 0;
+  }
+
+  @media (min-width: 1440px) {
+    display: block;
+    height: 100%;
+    left: -320px;
+    margin-left: 14px;
+  }
+}
+
+.feedback,
+.call-modal {
+  @extend %modal-base;
+  right: 0;
+
+  @media (min-width: 513px) {
+    top: 0;
+    border-radius: $border-radius;
+    box-shadow: $shadow-medium;
+  }
+}
+
+// Заголовки модалок
+.connect__title,
+.call-title {
+  display: flex;
+  color: $color-black;
+  width: 288px;
+  height: 40px;
+  font-family: $font-bold;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  margin: 40px 0 0 0;
+
+  @include title-accent;
+}
+
+// Формы
+#name,
+#number,
+#email,
+#message {
+  width: 280px;
+  border: 1px solid $color-border;
+
+  @include placeholder($color-placeholder);
+}
+
+#name,
+#number,
+#email {
+  height: 42px;
+  margin-bottom: 18px;
+}
+
+#message {
+  height: 112px;
+}
+
+.information {
+  color: $color-text-gray;
+  margin-left: 0;
+  font-family: $font-regular;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  width: 288px;
+}
+
+.info,
+.info-two {
+  color: $color-error;
+  font-family: $font-regular;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+// Кнопки отправки
+.button_send,
+.button_order {
+  display: flex;
+  width: 136px;
+  height: 32px;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-top: 30px;
+  margin-right: 20px;
+
+  &::after {
+    content: url("img/>.svg");
+    width: 7px;
+    height: 9px;
+    margin-top: -5px;
+  }
+}
+
+.call-modal .button_send {
+  margin-top: 0;
+}
+
+.send,
+.order {
+  color: $color-white;
+  font-family: $font-bold;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.send {
+  width: 89px;
+  height: 24px;
+}
+
+.order {
+  width: 67px;
+  height: 24px;
+}
+
+.button_close {
+  width: 40px;
+  height: 40px;
+  background: $color-white;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: $shadow-light;
+
+  @media (min-width: 513px) {
+    right: auto;
+    left: 20px;
+  }
+
+  .feedback &,
+  .call-modal & {
+    margin-right: 100%;
+    margin-left: -10px;
+  }
+}
