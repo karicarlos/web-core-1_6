@@ -8,14 +8,15 @@
     overflow-y: hidden;
     list-style-type: none;
     margin-left: 16px;
-    padding: 10px;
-    margin-top: 0;
+    padding: 8px;
+    margin-top: 20px;
 }
 
 .nav-list__link {
     width: 200px;
     height: 40px;
     color: $color-text-gray;
+    background-color: $color-white;
     text-align: center;
     text-decoration: none;
     justify-content: flex-start;
@@ -29,12 +30,14 @@
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
+
+    &_active,
+    &:hover {
+   border: 2px solid #B8FFEC; 
+  }
 }
 ::-webkit-scrollbar {
     display: none;
 }
- .nav-list__link:hover {
-    color: $color-text-gray;
-    border: 1px solid #B8FFEC;
-    background-color: #FFFFFF;
-}
+
+ 

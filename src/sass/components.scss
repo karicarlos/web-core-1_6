@@ -159,9 +159,9 @@
   flex-direction: row;
 }
 }
-
-// Параграфы
-p {
+.txt-allprices {
+  display: flex;
+  flex-direction: column;
   margin-left: $container-padding-mobile;
   border: 0;
   text-align: left;
@@ -173,11 +173,30 @@ p {
 
   @media (min-width: 768px) {
     margin: 0 $container-padding-tablet;
-  }
 }
+}
+.txt-allprices__comerc {
+  font-family: $font-medium;
+  color: $color-text-dark;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+// Параграфы
+
 .text-par {
   display: flex;
+  margin-left: $container-padding-mobile;
+  border: 0;
+  text-align: left;
+  font-family: $font-regular;
+  color: $color-text-dark;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
   @media (min-width: 768px) {
+    margin: 0 $container-padding-tablet;
     margin-top: 0;
   }
 
@@ -191,9 +210,20 @@ p {
 }
 .paragraph {
   display: none;
+  margin-left: $container-padding-mobile;
+  border: 0;
+  text-align: left;
+  font-family: $font-regular;
+  color: $color-text-dark;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+ 
   @media (min-width: 768px) {
     display: flex;
     margin-top: 0;
+    margin: 0 $container-padding-tablet;
   }
 
   @media (min-width: 1120px) {
@@ -202,9 +232,19 @@ p {
 }
 .par {
   display: none;
+  margin-left: $container-padding-mobile;
+  border: 0;
+  text-align: left;
+  font-family: $font-regular;
+  color: $color-text-dark;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
   @media (min-width: 768px) {
     display: none;
     margin-top: 0;
+    margin: 0 $container-padding-tablet;
   }
 
   @media (min-width: 1120px) {

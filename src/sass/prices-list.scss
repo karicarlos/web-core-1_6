@@ -154,6 +154,7 @@
 
 .prices__button {
   position: absolute;
+  justify-content: space-around;
   bottom: 16px;
   right: 16px;
   width: 119px;
@@ -168,8 +169,16 @@
   color: $color-white;
   cursor: pointer;
   white-space: nowrap;
-
+&::after {
+    content: url("img/>.svg");
+    color: $color-white;
+    width: 7px;
+    height: 9px;
+    margin-top: -5px;
+}
   @media (min-width: 768px) {
     grid-column: 4;
+    grid-row: 5;
   }
+ 
 }
