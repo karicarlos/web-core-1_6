@@ -3,6 +3,7 @@ import "./sass/main.scss";
 var init = false;
 var brandsSwiper;
 var devicesSwiper;
+var pricesSwiper;
 
 if (window.innerWidth < 784) {
   if (!init) {

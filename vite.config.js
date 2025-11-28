@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  publicDir: 'public',
-  base: '/web-core-1_6/',
+  publicDir: "public",
+  base: "/web-core-1_6/",
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     cssCodeSplit: true,
     emptyOutDir: true,
-    assetsDir: 'assets',
+    assetsDir: "./",
     rollupOptions: {
       input: {
-        main: 'index.html', 
+        main: "index.html",
       },
     },
   },
