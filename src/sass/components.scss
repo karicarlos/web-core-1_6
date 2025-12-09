@@ -129,18 +129,21 @@
 
 // Текстовые блоки
 .text {
+  width: 132px;
+  height: 24px;
   text-decoration: none;
   font-family: $font-medium;
   color: $color-text-dark;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  margin-left: 10px;
 
   &::before {
     content: url("img/exp.svg");
     width: 24px;
     height: 24px;
-    margin: 0 10px;
+    margin: 0 16px;
     vertical-align: middle;
   }
 
@@ -173,6 +176,7 @@
 
   @media (min-width: 768px) {
     margin: 0 $container-padding-tablet;
+    margin-top: 20px;
 }
 }
 .txt-allprices__comerc {
@@ -182,6 +186,14 @@
   font-size: 16px;
   line-height: 24px;
 }
+.txt-allprices__comerc::after {
+    content: url("img/>.svg");
+    color: $color-primary;
+    width: 11px;
+    height: 6px;
+    
+  }
+
 // Параграфы
 
 .text-par {

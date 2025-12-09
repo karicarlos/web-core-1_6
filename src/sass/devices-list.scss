@@ -5,21 +5,21 @@
 .devices {
   display: flex;
   flex-direction: column;
-
+  
   &__swiper {
     margin-left: 0;
     margin-right: 0;
-
     --swiper-pagination-bullet-size: 12px;
     --swiper-pagination-color: #b5b6bc;
     --swiper-pagination-bullet-inactive-color: #b5b6bc;
   }
-
+  & .swiper-wrapper {
+    gap:24px;
+}   
   &__list {
     max-height: 290px;
     overflow: visible;
     flex-wrap: wrap;
-    gap: 24px;
   }
 
   &.over {
@@ -38,7 +38,7 @@
     align-items: end;
     padding: 10px;
   }
-
+  
   h1.name {
     height: 80px;
     border: 0;
@@ -58,6 +58,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  gap:24px;
 
   @media (min-width: 768px) {
     max-width: 224px;
