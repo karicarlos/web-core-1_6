@@ -5,9 +5,8 @@
   flex-direction: column;
   margin-top: 24px;
   padding: 20px;
-@media (min-width: 768px) {
-  flex-direction: row;
-}
+  text-align: center;
+
 }
 .footer__content {
   display: flex;

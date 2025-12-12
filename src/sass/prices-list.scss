@@ -98,7 +98,9 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-
+  padding: 5px;
+  margin: 2px;
+  margin-left: 5px;
   @media (min-width: 768px) {
     font-size: 14px;
     color: #333;
@@ -154,7 +156,7 @@
 .prices__button {
   position: absolute;
   justify-content: space-around;
-  bottom: 35px;
+  bottom: 25px;
   right: 16px;
   width: 119px;
   height: 32px;
@@ -172,7 +174,7 @@
     grid-column: 4;
     grid-row: 5;
     bottom: 10px;
-    right: 0;
+    right: 10px;
     
   }
 &::after {
