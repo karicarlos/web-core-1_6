@@ -77,3 +77,60 @@ if (window.innerWidth < 784) {
 
   init = false;
 }
+
+//  Закрыть/открыть бургер меню
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sidebar = document.querySelector('.sidebar');
+  const sidebarOpenBtn = document.querySelector('.nav__open-btn');
+  const sidebarCloseBtn = document.querySelector('.sidebar__close-btn');
+
+  const callBtn = document.querySelector('.contacts__call-btn');
+  const callModal = document.querySelector('.call-modal');
+  const callModalCloseBtn = document.querySelector('.call-modal__close-btn');
+  
+  const chatBtn = document.querySelector('.contacts__chat-btn');
+  const feedbackModal = document.querySelector('.feedback');
+  const feedbackCloseBtn = document.querySelector('.feedback__close-btn');
+
+  function closeSidebar() {
+    sidebar.classList.remove('sidebar_opened');
+  }
+
+  // Открытие меню
+  sidebarOpenBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    sidebar.classList.add('sidebar_opened');
+  });
+
+  // Закрытие меню
+  sidebarCloseBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeSidebar();
+  });
+
+  // 
+  callBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeSidebar();
+    callModal.classList.add('call-modal_opened');
+  });
+
+ callModalCloseBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeSidebar();
+    callModal.classList.remove('call-modal_opened');
+  });
+
+  chatBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeSidebar();
+    feedbackModal.classList.add('feedback_opened');
+  });
+
+  feedbackCloseBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeSidebar();
+    feedbackModal.classList.remove('feedback_opened');
+  });
+});

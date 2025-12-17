@@ -42,35 +42,6 @@
   }
 }
 
-.sidebar {
-  @extend %modal-base;
-  left: -100%;
-  transition: left $transition;
-
-  &.open {
-    left: 0;
-  }
-
-  @media (min-width: 1440px) {
-    display: block;
-    height: 100%;
-    left: -320px;
-    margin-left: 14px;
-  }
-}
-
-.feedback,
-.call-modal {
-  @extend %modal-base;
-  right: 0;
-
-  @media (min-width: 513px) {
-    top: 0;
-    border-radius: $border-radius;
-    box-shadow: $shadow-medium;
-  }
-}
-
 // Заголовки модалок
 .connect__title,
 .call-title {
@@ -149,9 +120,6 @@
   }
 }
 
-.call-modal .button_send {
-  margin-top: 0;
-}
 
 .send,
 .order {
@@ -170,27 +138,4 @@
 .order {
   width: 67px;
   height: 24px;
-}
-
-.button_close {
-  width: 40px;
-  height: 40px;
-  background: $color-white;
-  border-radius: 50%;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1001;
-  box-shadow: $shadow-light;
-
-  @media (min-width: 513px) {
-    right: auto;
-    left: 20px;
-  }
-
-  .feedback &,
-  .call-modal & {
-    margin-right: 100%;
-    margin-left: -10px;
-  }
 }

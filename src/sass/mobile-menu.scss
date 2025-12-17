@@ -1,0 +1,31 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+  width: $sidebar-width;
+  max-width: $sidebar-max-width;
+  height: 100%;
+  background-color: $color-white;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  transition: left $transition;
+
+  @media (min-width: 1440px) {
+    display: block;
+    height: 100%;
+    left: -320px;
+    margin-left: 14px;
+  }
+}
+
+.sidebar_opened {
+    display: block;
+    left: 0;
+}
