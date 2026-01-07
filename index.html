@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swiper - Ремонт Техники</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script type="module" crossorigin src="/web-core-1_6/main-Ci2SiKGk.js"></script>
-  <link rel="stylesheet" crossorigin href="/web-core-1_6/main-m336YiS6.css">
+  <script type="module" crossorigin src="/web-core-1_6/main-DSMP_Wvz.js"></script>
+  <link rel="stylesheet" crossorigin href="/web-core-1_6/main-Yc1MFL_D.css">
 </head>
 
 <body>
-  <div class="overlay"></div>
+  <div id="overlay"></div>
   <aside class="sidebar">
     <header class="header-page">
-      <button class="button sidebar-close-btn">
+      <button class="button sidebar__close-btn">
         <img class="button__close" src="img/close.svg" alt="Close">
       </button>
       <img src="img/logo.svg" alt="Logo" class="logo">
@@ -53,11 +53,11 @@
     <footer class="footer-aside">
       <ul class="contacts">
         <li>
-          <button class="button button_call call-open-btn">
+          <button class="button button_call contacts__call-btn">
             <img class="call contacts__call" src="img/call.svg" alt="Call"> </button>
         </li>
         <li>
-          <button class="button button_chat message-open-btn">
+          <button class="button button_chat contacts__chat-btn">
             <img class="chat contacts__chat" src="img/chat.png" alt="Chat">
           </button>
         </li>
@@ -86,7 +86,7 @@
   </aside>
   <aside class="call-modal">
     <header class="header-call">
-      <button class="button button_close">
+      <button class="button call-modal__close-btn">
         <img class="button__close" src="img/close.svg" alt="Close">
       </button>
       <div class="call-order">
@@ -107,7 +107,7 @@
         <div class="nav">
           <ul class="nav__left">
             <li>
-              <button class="button menu-open-btn">
+              <button class="button nav__open-btn">
                 <img src="img/menu.svg" alt="Menu">
               </button>
             </li>
@@ -427,9 +427,10 @@
   </footer>
   <aside class="feedback">
     <header class="header-btn">
-      <button class="button button_close">
+      <button class="button feedback__close-btn">
         <img class="button__close" src="img/close.svg" alt="Close">
       </button>
+    </header>
       <div class="connect">
         <h2 class="connect__title">Обратная связь</h2>
       </div>
@@ -438,9 +439,9 @@
         <input type="number" id="number" name="number" placeholder="Телефон"><br>
         <input type="email" id="email" name="email" placeholder="Электронная почта"><br>
         <input type="message" id="message" name="message" placeholder="Сообщение"><br>
-        <p class="information">Нажимая “отправить”, вы даете согласие<br> на <a class="info" href="#">обработку
-            персональных данных</a> и<br> соглашаетесь с нашей <a class="info-two" href="#">политикой
-            конфиденциальности"</a></p>
+        <p class="information">Нажимая “отправить”, вы даете согласие на <a class="info" href="#">обработку
+            персональных данных</a> и соглашаетесь с нашей <a class="info-two" href="#">политикой
+            конфиденциальности</a></p>
       </form>
       <button class="button button_send">
         <span class="send">ОТПРАВИТЬ</span>
