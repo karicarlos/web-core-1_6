@@ -3,12 +3,11 @@
 
 .call-modal {
   position: fixed;
-  top: 0;
-  width: $sidebar-width;
-  max-width: $sidebar-max-width;
+  top: 0;  
+  width: 320px;
   height: 100%;
   background-color: $color-white;
-  z-index: 1000;
+  z-index: 100;
   padding: 20px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -18,8 +17,95 @@
 
 .call-modal_opened {
     display: block;
+    right: 0;
 }
+.call-title {
+  display: flex;
+  color: $color-black;
+  width: 288px;
+  height: 40px;
+  font-family: $font-bold;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  margin: 40px 0 0 0;
 
+  @include title-accent;
+}
+#number {
+  height: 48px;
+  margin-bottom: 18px;
+  width: 288px;
+  border: 1px solid $color-border;
+
+  @include placeholder($color-placeholder);
+  @media (min-width:513px) {
+  width:376px;
+  }
+}
 .call-modal .button_send {
   margin-top: 0;
+}
+.call-modal .information {
+  color: $color-text-gray;
+  margin-left: 0;
+  font-family: $font-regular;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  max-width: 288px;
+  height: 64px;
+}
+.info {
+  color: $color-error;
+  font-family: $font-regular;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+.info-two {
+  color: $color-error;
+  font-family: $font-regular;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+.button_send {
+  display: flex;
+  width: 136px;
+  height: 32px;
+  justify-content: space-around;
+  margin-top:10px;
+  margin-right: 0;
+  margin-left: auto;
+  &::after {
+    content: url("img/>.svg");
+    width: 7px;
+    height: 9px;
+    margin-top: -5px;
+  }
+}
+.call-modal__close-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 0;
+  box-shadow: $shadow-light;
+  @media (min-width:513px) {
+  position: fixed;
+  translate: -90px;
+  top:60px;
+  }
 }

@@ -84,14 +84,25 @@ document.addEventListener('DOMContentLoaded', function () {
   const sidebar = document.querySelector('.sidebar');
   const sidebarOpenBtn = document.querySelector('.nav__open-btn');
   const sidebarCloseBtn = document.querySelector('.sidebar__close-btn');
+  const overlay = document.getElementById('overlay');
 
   const callBtn = document.querySelector('.contacts__call-btn');
   const callModal = document.querySelector('.call-modal');
   const callModalCloseBtn = document.querySelector('.call-modal__close-btn');
-  
+
   const chatBtn = document.querySelector('.contacts__chat-btn');
   const feedbackModal = document.querySelector('.feedback');
   const feedbackCloseBtn = document.querySelector('.feedback__close-btn');
+
+  // Функция для открытия оверлея
+  function openOverlay() {
+    if (overlay) overlay.style.display = 'block';
+  }
+
+  // Функция для закрытия оверлея
+  function closeOverlay() {
+    if (overlay) overlay.style.display = 'none';
+  }
 
   function closeSidebar() {
     sidebar.classList.remove('sidebar_opened');
@@ -101,12 +112,14 @@ document.addEventListener('DOMContentLoaded', function () {
   sidebarOpenBtn.addEventListener('click', function (e) {
     e.preventDefault();
     sidebar.classList.add('sidebar_opened');
+    openOverlay(); 
   });
 
   // Закрытие меню
   sidebarCloseBtn.addEventListener('click', function (e) {
     e.preventDefault();
     closeSidebar();
+    closeAll(); 
   });
 
   // 
@@ -114,23 +127,28 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     closeSidebar();
     callModal.classList.add('call-modal_opened');
+    openOverlay(); 
   });
 
  callModalCloseBtn.addEventListener('click', function (e) {
     e.preventDefault();
     closeSidebar();
     callModal.classList.remove('call-modal_opened');
+    closeOverlay(); 
   });
 
   chatBtn.addEventListener('click', function (e) {
     e.preventDefault();
     closeSidebar();
     feedbackModal.classList.add('feedback_opened');
-  });
+    openOverlay();
+  }); 
 
   feedbackCloseBtn.addEventListener('click', function (e) {
     e.preventDefault();
     closeSidebar();
     feedbackModal.classList.remove('feedback_opened');
+    closeOverlay();
   });
 });
+
