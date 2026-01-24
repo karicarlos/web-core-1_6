@@ -3,7 +3,7 @@
 
 .brands {
   @include hide-scrollbar;
-  
+  height: 400px;
   @media (min-width: 768px) {
     gap: 10px;
     flex-wrap: nowrap;
@@ -109,3 +109,5 @@
     grid-column: 4;
   }
 }
+
+

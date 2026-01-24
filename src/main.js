@@ -78,8 +78,6 @@ if (window.innerWidth < 784) {
   init = false;
 }
 
-//  Закрыть/открыть бургер меню
-
 document.addEventListener('DOMContentLoaded', function () {
   const sidebar = document.querySelector('.sidebar');
   const sidebarOpenBtn = document.querySelector('.nav__open-btn');
@@ -94,6 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const feedbackModal = document.querySelector('.feedback');
   const feedbackCloseBtn = document.querySelector('.feedback__close-btn');
 
+  const readMoreBtn = document.querySelector('.btn-t');
+  const fullText = document.querySelector('.text-par_full');
+
   // Функция для открытия оверлея
   function openOverlay() {
     if (overlay) overlay.style.display = 'block';
@@ -103,52 +104,113 @@ document.addEventListener('DOMContentLoaded', function () {
   function closeOverlay() {
     if (overlay) overlay.style.display = 'none';
   }
-
   function closeSidebar() {
-    sidebar.classList.remove('sidebar_opened');
+    if (sidebar) sidebar.classList.remove('sidebar_opened');
+  }
+  function closeAll() {
+    closeSidebar();
+    if (callModal) callModal.classList.remove('call-modal_opened');
+    if (feedbackModal) feedbackModal.classList.remove('feedback_opened');
+    closeOverlay();
   }
 
   // Открытие меню
-  sidebarOpenBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    sidebar.classList.add('sidebar_opened');
-    openOverlay(); 
-  });
+  if (sidebarOpenBtn) {
+    sidebarOpenBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (sidebar) sidebar.classList.add('sidebar_opened');
+      openOverlay();
+    });
+  }
 
   // Закрытие меню
+  if (sidebarCloseBtn) {
   sidebarCloseBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    closeSidebar();
     closeAll(); 
   });
-
+  }
   // 
+  if (callBtn) {
   callBtn.addEventListener('click', function (e) {
     e.preventDefault();
     closeSidebar();
-    callModal.classList.add('call-modal_opened');
+    if (callModal) callModal.classList.add('call-modal_opened');
     openOverlay(); 
   });
-
+  }
+  if (callModalCloseBtn) {
  callModalCloseBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    closeSidebar();
-    callModal.classList.remove('call-modal_opened');
-    closeOverlay(); 
+    closeAll(); 
   });
-
+  }
+  if (chatBtn) {
   chatBtn.addEventListener('click', function (e) {
     e.preventDefault();
     closeSidebar();
-    feedbackModal.classList.add('feedback_opened');
+    if (feedbackModal) feedbackModal.classList.add('feedback_opened');
     openOverlay();
   }); 
-
+  }
+  if (feedbackCloseBtn) {
   feedbackCloseBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    closeSidebar();
-    feedbackModal.classList.remove('feedback_opened');
-    closeOverlay();
+    closeAll();
   });
-});
+  }
+  // === Закрытие по клику на оверлей ===
+  if (overlay) {
+    overlay.addEventListener('click', function (e) {
+      e.preventDefault();
+      closeAll();
+    });
+  }
+  // === Закрытие по нажатию ESC ===
+  document.addEventListener('keyup', function (e) {
+    if (e.key === 'Escape'|| e.keyCode === 27) {
+       if (
+      (sidebar && sidebar.classList.contains('sidebar_opened')) ||
+      (callModal && callModal.classList.contains('call-modal_opened')) ||
+      (feedbackModal && feedbackModal.classList.contains('feedback_opened'))
+    ) {
+      closeAll();
+    }
+  }
+  });
+// === Кнопка "Читать далее" ===
+  if (readMoreBtn && fullText) {
+    readMoreBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (window.innerWidth <= 767) {
+        fullText.style.display = 'block';
+        this.style.display = 'none';
+      }
+    });
+  }
+// Ищем кнопку "Показать все" более надёжно
+const buttons = Array.from(document.querySelectorAll('button, [role="button"], div, span, a'));
+  const showAllButton = buttons.find(el => {
+    const text = el.textContent.trim().replace(/\s+/g, ' ');
+    return text === 'Показать все';
+  });
 
+
+if (showAllButton) {
+  showAllButton.addEventListener('click', function(e) {
+    e.preventDefault(); // отменяем стандартное поведение (если есть)
+    e.stopPropagation(); // предотвращаем всплытие (опционально)
+
+    // Находим все карточки с классом "expand"
+    const expandCards = document.querySelectorAll('.expand');
+
+    expandCards.forEach(card => {
+      // Сохраняем оригинальный display из CSS, если возможно
+      // Если не знаем — используем 'block' как fallback
+      card.style.display = ''; 
+  });
+    // Скрываем кнопку
+    this.style.display = 'none';
+  });
+}
+ });

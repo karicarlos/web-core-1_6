@@ -1,5 +1,6 @@
 @use "variables" as *;
  
+
 .nav-list__list {
     display: flex;
     width: 100%;
@@ -7,9 +8,9 @@
     overflow-x: scroll;
     overflow-y: hidden;
     list-style-type: none;
-    margin-left: 16px;
     padding: 8px;
     margin: 20px;
+    
 }
 
 .nav-list__link {
@@ -23,17 +24,19 @@
     white-space: nowrap;
     border: 2px;
     padding: 5px 8px;
-    margin-right: 0;
+    margin-right: 16px;
     border-radius: 5px;
     font-family: $font-regular;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
+    
 
     &_active,
     &:hover {
    border: 2px solid #B8FFEC; 
+   
   }
 }
 ::-webkit-scrollbar {

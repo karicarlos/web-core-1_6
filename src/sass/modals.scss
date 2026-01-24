@@ -12,6 +12,11 @@
   z-index: 2;
   transition: $transition;
   display: none;
+  pointer-events: auto;
+}
+
+.overlay.active {
+    display: block;
 }
 
 form {

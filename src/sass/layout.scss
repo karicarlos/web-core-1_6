@@ -148,13 +148,16 @@
    } 
   }
 
-.logo_img {
-  width: 100%;
+.pic_img {
+  width: 320px;
   padding-right: 24px;
   margin: 16px 0;
-
   @media (min-width: 768px) {
-    min-width: 360px;
-    min-height: 208px;
+    max-width:360px;
+    max-height: 208px;
+  }
+  @media (min-width: 1120px) {
+    max-width:531px;
+    max-height: 307px;
   }
 }

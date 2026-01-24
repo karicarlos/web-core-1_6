@@ -144,6 +144,10 @@
 }
 
 // Текстовые блоки
+.btn-t {
+  border: 0;
+  background-color: $color-bg;
+}
 .text {
   width: 132px;
   height: 24px;
@@ -176,7 +180,14 @@
   flex-direction: column;
 @media (min-width: 768px) {
   flex-direction: row;
+  
 }
+}
+.text-description {
+  @media (min-width: 1120px) {
+    display: flex;
+    max-width:600px ;
+  }
 }
 .txt-allprices {
   display: flex;
@@ -212,11 +223,10 @@
 
 // Параграфы
 
-.text-par {
+.text-part_one {
   display: flex;
   margin-left: $container-padding-mobile;
   border: 0;
-  text-align: left;
   font-family: $font-regular;
   color: $color-text-dark;
   font-weight: 400;
@@ -227,16 +237,11 @@
     margin: 0 $container-padding-tablet;
     margin-top: 0;
   }
-
   @media (min-width: 1120px) {
-    display: flex;
-    width: 490px;
-    height: 80px;
-    margin-top: 10px;
-
+    max-width: 50%;
   }
 }
-.paragraph {
+.text-par {
   display: none;
   margin-left: $container-padding-mobile;
   border: 0;
@@ -258,11 +263,11 @@
     display: none;
   }
 }
-.par {
+.text-par_full {
   display: none;
   margin-left: $container-padding-mobile;
   border: 0;
-  text-align: left;
+  
   font-family: $font-regular;
   color: $color-text-dark;
   font-weight: 400;
@@ -277,8 +282,6 @@
 
   @media (min-width: 1120px) {
     display: flex;
-    width: 490px;
-    height: 80px;
     margin-top: 10px;
 
   }
