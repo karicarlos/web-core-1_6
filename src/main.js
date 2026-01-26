@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const feedbackCloseBtn = document.querySelector('.feedback__close-btn');
 
   const readMoreBtn = document.querySelector('.btn-t');
-  const fullText = document.querySelector('.text-par_full');
+  const fullText = document.querySelector('.par');
 
   // Функция для открытия оверлея
   function openOverlay() {
@@ -199,8 +199,7 @@ const buttons = Array.from(document.querySelectorAll('button, [role="button"], d
 if (showAllButton) {
   showAllButton.addEventListener('click', function(e) {
     e.preventDefault(); // отменяем стандартное поведение (если есть)
-    e.stopPropagation(); // предотвращаем всплытие (опционально)
-
+   
     // Находим все карточки с классом "expand"
     const expandCards = document.querySelectorAll('.expand');
 
@@ -209,8 +208,37 @@ if (showAllButton) {
       // Если не знаем — используем 'block' как fallback
       card.style.display = ''; 
   });
-    // Скрываем кнопку
-    this.style.display = 'none';
   });
 }
  });
+ document.querySelector('.btn-t').addEventListener('click', function() {
+    const width = window.innerWidth;
+    const targetElement = document.getElementById('text'); // или другой селектор
+
+
+    if (width <= 320) {
+        // На экране 320px и меньше — добавляем класс par
+        this.classList.add('par');
+        console.log('Добавлен класс par (разрешение ≤ 320px)');
+    } else if (width >= 768) {
+        targetElement.classList.remove('paragraph');
+        targetElement.classList.add('par');
+    }
+});
+document.querySelector('.click-one').addEventListener('click', function() {
+    // Проверяем разрешение — только если больше 768px
+    if (window.innerWidth > 768) {
+        // Находим все карточки в контейнере
+        const cards = document.querySelectorAll('.cards-container .card');
+
+        // Убираем скрытие — удаляем класс hidden или меняем display
+        cards.forEach(card => {
+            card.style.display = 'block'; // или card.classList.remove('hidden');
+        });
+
+        // Опционально: можно скрыть саму кнопку после нажатия
+        this.style.display = 'none';
+    } else {
+        console.log('Кнопка "Показать все" работает только при ширине > 768px');
+    }
+});

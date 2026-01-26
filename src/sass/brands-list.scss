@@ -3,7 +3,7 @@
 
 .brands {
   @include hide-scrollbar;
-  height: 400px;
+  
   @media (min-width: 768px) {
     gap: 10px;
     flex-wrap: nowrap;
@@ -11,14 +11,16 @@
 
     &.expand {
       max-height: 1000px;
+      
     }
   }
 
   @media (min-width: 1120px) {
     
-    flex: 1 1 calc(25% - 12px);
+    flex: 1 1 calc(25% - 10px);
 
     &.expand {
+      
       max-height: 1000px;
     }
   }

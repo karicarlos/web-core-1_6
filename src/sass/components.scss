@@ -116,7 +116,7 @@
     padding-left: 8px;
   }
 }
-
+ 
 .address {
   display: block;
   padding: 20px 0 0 24px;
@@ -143,10 +143,14 @@
   margin-bottom: 10px;
 }
 
+
 // Текстовые блоки
+
+
 .btn-t {
   border: 0;
   background-color: $color-bg;
+  padding-top: 12px;
 }
 .text {
   width: 132px;
@@ -157,7 +161,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  margin-left: 10px;
+  margin-left: 14px;
 
   &::before {
     content: url("img/exp.svg");
@@ -175,18 +179,11 @@
     }
   }
 }
-.main-article {
-  display: flex;
-  flex-direction: column;
-@media (min-width: 768px) {
-  flex-direction: row;
-  
-}
-}
+
 .text-description {
   @media (min-width: 1120px) {
     display: flex;
-    max-width:600px ;
+    max-width:500px;
   }
 }
 .txt-allprices {
@@ -223,10 +220,11 @@
 
 // Параграфы
 
-.text-part_one {
+.text-par {
   display: flex;
   margin-left: $container-padding-mobile;
   border: 0;
+  text-align: left;
   font-family: $font-regular;
   color: $color-text-dark;
   font-weight: 400;
@@ -234,14 +232,15 @@
   line-height: 20px;
 
   @media (min-width: 768px) {
+    display: flex;
     margin: 0 $container-padding-tablet;
     margin-top: 0;
   }
   @media (min-width: 1120px) {
-    max-width: 50%;
+    width: 60%;
   }
 }
-.text-par {
+.paragraph {
   display: none;
   margin-left: $container-padding-mobile;
   border: 0;
@@ -251,6 +250,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  margin-right: 0;
 
  
   @media (min-width: 768px) {
@@ -263,17 +263,16 @@
     display: none;
   }
 }
-.text-par_full {
+.par {
   display: none;
   margin-left: $container-padding-mobile;
   border: 0;
-  
   font-family: $font-regular;
   color: $color-text-dark;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-
+  margin-right: 0;
   @media (min-width: 768px) {
     display: none;
     margin-top: 0;
@@ -281,9 +280,9 @@
   }
 
   @media (min-width: 1120px) {
-    display: flex;
+    display: block;
     margin-top: 10px;
-
+    max-width: 500px;
   }
   
 }
